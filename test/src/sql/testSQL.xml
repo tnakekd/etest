@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 
+		'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+		
+<sqlMap>
+
+	<typeAlias alias="memdto" type="bean.memberDTO"/>
+	
+	<resultMap class="memdto" id="memrst">
+		<result property="id" column="id" />
+		<result property="pw" column="pw" />
+		<result property="age" column="age" />
+	</resultMap>
+	
+	<!-- member 테이블 -->
+	<select id="getMemberTB" resultMap="memrst">
+		select * from member
+	</select>
+
+</sqlMap>
